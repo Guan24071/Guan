@@ -50,7 +50,7 @@
       <div class="container">
 
         <a class="navbar-brand navbar-brand-text text-body-emphasis text-decoration-none" href="#hero">
-          黃冠皓<span class="dot">.</span>
+          網站開發中並非最終版<span class="dot">.</span>
         </a>
 
         <div class="d-flex align-items-center gap-2 order-lg-last">
@@ -462,16 +462,15 @@
 
           <div class="col-12 col-md-6 col-xl-4">
             <article class="card project-card border-0 shadow-sm">
-              <img class="project-thumb" loading="lazy" src="./assets/img/portfolio/project-landscape-2.jpg" alt="ComfyUI 影像生成管線" width="800" height="500">
+              <img class="project-thumb" loading="lazy" src="./assets/img/works/comfyui-text-to-image.jpg" alt="ComfyUI 文字生圖工作流" width="2133" height="1250">
               <div class="card-body p-4">
                 <h4 class="h5 mb-2">ComfyUI 影像生成管線</h4>
                 <p class="text-secondary mb-3">
-                  把生圖拆成一條可重跑的流程：語言模型產生提示詞、生圖、
-                  再由視覺模型對成品評分挑片，不合格的自動重生。
-                  同一套流程延伸到影片生成。
+                  透過 ComfyUI 建立可重複執行的文字生圖流程，並結合本地語言模型，
+                  將自然語言需求整理成影像與影片生成提示詞；整套流程皆在本機端完成。
                 </p>
                 <div>
-                  <span class="chip">ComfyUI</span><span class="chip">Qwen3-VL</span><span class="chip">i2v</span>
+                  <span class="chip">ComfyUI</span><span class="chip">Local LLM</span><span class="chip">Text-to-Image</span><span class="chip">i2v</span>
                 </div>
                 <button type="button" class="card-more stretched-link mt-3" data-bs-toggle="modal" data-bs-target="#work-comfy">查看細節 →</button>
               </div>
@@ -768,34 +767,25 @@
         <div class="modal-body">
 
           <div class="work-gallery">
-            <!-- 【待補】以下五張建議截圖：工作流全貌、提示詞節點、生圖節點、評分節點、成品接觸表 -->
             <figure>
-              <img loading="lazy" src="./assets/img/portfolio/project-landscape-4.jpg" alt="工作流全貌">
-              <figcaption>工作流全貌：從提示詞生成到成品評分串成一條可重跑的流程。</figcaption>
+              <img loading="lazy" src="./assets/img/works/comfyui-text-to-image.jpg" alt="ComfyUI 文字生圖的模型、提示詞、取樣及儲存節點">
+              <figcaption>以標準 ComfyUI 工作流串接模型、正負提示詞、取樣、VAE 解碼與圖片儲存節點，完成可重複執行的文字生圖流程。</figcaption>
             </figure>
             <figure>
-              <img loading="lazy" src="./assets/img/blog/blog-image-1.jpg" alt="提示詞生成節點">
-              <figcaption>提示詞生成節點：由本地語言模型依角色設定產生該張圖的提示詞。</figcaption>
+              <img loading="lazy" src="./assets/img/works/comfyui-local-llm-video.jpg" alt="本地語言模型將圖片與自然語言整理成影片生成提示詞">
+              <figcaption>將參考圖片與自然語言需求交給本地語言模型整理，產生結構化的影片提示詞及相關參數，再接續後方的生成流程。</figcaption>
             </figure>
             <figure>
-              <img loading="lazy" src="./assets/img/blog/blog-image-2.jpg" alt="生圖節點與取樣設定">
-              <figcaption>生圖節點與取樣設定。</figcaption>
-            </figure>
-            <figure>
-              <img loading="lazy" src="./assets/img/blog/blog-image-3.jpg" alt="視覺模型評分節點">
-              <figcaption>視覺模型評分節點：Qwen3-VL 對成品打分，低於門檻的自動重生。</figcaption>
-            </figure>
-            <figure>
-              <img loading="lazy" src="./assets/img/blog/blog-image-4.jpg" alt="成品接觸表">
-              <figcaption>成品接觸表：一次檢視整批結果，挑出要重做的那幾張。</figcaption>
+              <img loading="lazy" src="./assets/img/works/comfyui-local-workflow.jpg" alt="ComfyUI 本機工作流與終端機執行紀錄">
+              <figcaption>ComfyUI 工作區與本機執行紀錄同步呈現，模型、工作流與素材處理皆在本機環境完成，降低資料傳送至外部服務的需求。</figcaption>
             </figure>
           </div>
 
           <div class="work-notes text-secondary">
             <p>
-              生圖最麻煩的不是生不出來，而是「生了三十張、要一張一張看哪張可用」。
-              所以把挑片也交給模型：視覺模型對每張成品打分，低於門檻的自動重生，
-              人只需要看最後的接觸表。同一套流程再往下接 i2v，就變成影片。
+              這套管線將文字生圖、提示詞整理與圖生影片整合在 ComfyUI 中。
+              使用者可以直接輸入自然語言，由本地語言模型轉換成適合生成模型使用的提示詞，
+              再交由後續節點完成影像或影片生成。模型與素材處理均在本機端執行，兼顧流程彈性與資料隱私。
             </p>
           </div>
 

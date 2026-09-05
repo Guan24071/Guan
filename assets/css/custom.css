@@ -374,18 +374,22 @@ a.skip-link:focus { left: 0; }
 
 /* 圖片輪播 */
 .work-carousel { border-radius: .75rem; overflow: hidden; border: 1px solid var(--bs-border-color); background: var(--bs-body-bg); }
-/* 截圖的長寬比落差很大（直式的手機截圖可以到 800x1120），
-   不設上限的話說明文字與縮圖列會被推出畫面外。
-   contain + 深色底，讓letterbox 看起來是刻意的。 */
+/* 所有截圖共用固定畫布，切換橫式／直式圖片時 Modal 不會跟著跳動。
+   contain 保留完整畫面；比例不足的區域以深色 letterbox 補齊。 */
 .work-carousel .carousel-item img {
-  width: 100%; height: auto; display: block;
-  max-height: 60vh; object-fit: contain;
+  width: 100%; height: clamp(18rem, 52vh, 36rem); display: block;
+  object-fit: contain;
   background: var(--site-surface-2, #11161d);
 }
 .work-cap {
-  padding: .85rem 1rem; font-size: .9375rem; line-height: 1.7;
+  height: 5.75rem; padding: .85rem 1rem; font-size: .9375rem; line-height: 1.7;
+  display: flex; align-items: center; overflow-y: auto;
   color: var(--bs-secondary-color); background: var(--bs-body-bg);
   border-top: 1px solid var(--bs-border-color);
+}
+@media (max-width: 575.98px) {
+  .work-carousel .carousel-item img { height: clamp(13rem, 38vh, 20rem); }
+  .work-cap { height: 8rem; font-size: .875rem; }
 }
 /* 箭頭給一個深色圓底，才不會在淺色截圖上消失 */
 .work-carousel .carousel-control-prev,
