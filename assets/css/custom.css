@@ -293,6 +293,12 @@ a.skip-link:focus { left: 0; }
    13. 主力專案：左邊功能清單 + 右邊影片
    -------------------------------------------------------------------------- */
 .fn-nav { gap: .375rem; }
+.fn-nav .fn-group-label {
+  margin: .55rem .15rem .1rem;
+  font-family: var(--site-mono); font-size: .72rem; font-weight: 700;
+  letter-spacing: .12em; color: var(--bs-secondary-color);
+}
+.fn-nav .fn-group-label:first-child { margin-top: 0; }
 .fn-nav .nav-link {
   text-align: left; width: 100%;
   border: 1px solid var(--bs-border-color);

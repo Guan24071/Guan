@@ -384,38 +384,40 @@
           <!-- 功能清單 -->
           <div class="col-12 col-lg-4">
             <div class="nav flex-column fn-nav" role="tablist" aria-label="功能展示">
-              <!-- 影片來自播放清單「資展專題展示」。data-yt 填的是影片 ID。
-                   目前這六支的權限是「私人」，私人影片無法嵌入，必須改成「不公開」才會播。
-                   改權限不會改變影片 ID，所以下面不用動。 -->
+              <!-- 影片來自播放清單「資展專題展示」。data-yt 填的是影片 ID；
+                   六支影片皆設為「不公開」，可透過網站嵌入播放。 -->
+              <div class="fn-group-label">功能類</div>
               <button class="nav-link active" type="button" role="tab" aria-selected="true"
-                      data-yt="WAvnrGq0bBw"
+                      data-yt="Q_NFeG7miU0"
                       data-caption="從填寫表單、收取 Email 驗證碼到完成註冊的完整流程。驗證碼的正確答案只存在後端，而且只存雜湊值；時效 10 分鐘、重發冷卻 60 秒、連錯 5 次作廢。建立帳號前後端會再查一次「這個信箱真的通過驗證了嗎」——少了這一步，直接打 API 就能繞過整個驗證流程。">
                 <span class="fn-index">01</span>註冊演示
               </button>
               <button class="nav-link" type="button" role="tab" aria-selected="false"
-                      data-yt="pRE1S1Z7sU4"
-                      data-caption="登入頁的進場動畫與輸入欄位的互動回饋。">
-                <span class="fn-index">02</span>登入頁面動畫展示
-              </button>
-              <button class="nav-link" type="button" role="tab" aria-selected="false"
-                      data-yt="d7rVrd0xOgI"
-                      data-caption="密碼輸入錯誤時的提示動畫與欄位狀態。">
-                <span class="fn-index">03</span>密碼錯誤動畫
-              </button>
-              <button class="nav-link" type="button" role="tab" aria-selected="false"
-                      data-yt="4YD19_oRa4k"
-                      data-caption="登入成功後導向會員中心，以及登出時的狀態切換。">
-                <span class="fn-index">04</span>登入登出動畫
-              </button>
-              <button class="nav-link" type="button" role="tab" aria-selected="false"
                       data-yt="xWg0qmmNtTw"
                       data-caption="以 Google OAuth 2.0 登入。OAuth 導頁無法攜帶 Authorization 標頭，所以自行設計了短效、單次使用的「連結票」在導頁流程中識別身分。回程走 popup + postMessage，握手失敗也自己接住並回報，不讓視窗停在空白頁。">
-                <span class="fn-index">05</span>Google 登入展示
+                <span class="fn-index">02</span>Google 登入展示
               </button>
               <button class="nav-link" type="button" role="tab" aria-selected="false"
                       data-yt="bWDlXBoQj7s"
                       data-caption="在會員中心用自然語言請 AI 助理新增收件地址。模型不直接寫資料庫，只產生一張確認單；真正執行寫入的端點採動作白名單（新增／修改／刪除／設為預設／改顯示名稱），完全不經過模型，操作對象一律取自登入權杖。">
-                <span class="fn-index">06</span>AI 新建地址展示
+                <span class="fn-index">03</span>AI 新建地址展示
+              </button>
+
+              <div class="fn-group-label">動畫類</div>
+              <button class="nav-link" type="button" role="tab" aria-selected="false"
+                      data-yt="pRE1S1Z7sU4"
+                      data-caption="登入頁的進場動畫與輸入欄位的互動回饋。">
+                <span class="fn-index">04</span>登入頁面動畫展示
+              </button>
+              <button class="nav-link" type="button" role="tab" aria-selected="false"
+                      data-yt="d7rVrd0xOgI"
+                      data-caption="密碼輸入錯誤時的提示動畫與欄位狀態。">
+                <span class="fn-index">05</span>密碼錯誤動畫
+              </button>
+              <button class="nav-link" type="button" role="tab" aria-selected="false"
+                      data-yt="4YD19_oRa4k"
+                      data-caption="登入成功後導向會員中心，以及登出時的狀態切換。">
+                <span class="fn-index">06</span>登入登出動畫
               </button>
             </div>
           </div>
