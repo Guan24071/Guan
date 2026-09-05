@@ -446,16 +446,16 @@
 
           <div class="col-12 col-md-6 col-xl-4">
             <article class="card project-card border-0 shadow-sm">
-              <img class="project-thumb" loading="lazy" src="./assets/img/portfolio/project-landscape-1.jpg" alt="本地大型語言模型部署" width="800" height="500">
+              <img class="project-thumb" loading="lazy" src="./assets/img/works/llamacpp-local-chat.gif" alt="本地大型語言模型實際對話與 GPU 資源監看" width="960" height="540">
               <div class="card-body p-4">
                 <h4 class="h5 mb-2">本地大型語言模型部署</h4>
                 <p class="text-secondary mb-3">
-                  用 llama.cpp 架設文字與視覺兩台獨立推論服務，並自己寫了一層相容代理，
-                  把既有腳本慣用的 Ollama API 翻譯成 OpenAI 格式——二十來支腳本一行都不用改。
-                  兩台服務閒置一秒就吐回顯存，讓 ComfyUI 生圖時不會被佔住。
+                  依使用情境以 llama.cpp 與 KoboldCpp 部署本地 GGUF 模型，
+                  串接 SillyTavern、ComfyUI 及既有腳本；推論與對話資料留在本機，
+                  並透過 GPU 加速與閒置釋放機制調度顯存資源。
                 </p>
                 <div>
-                  <span class="chip">llama.cpp</span><span class="chip">CUDA</span><span class="chip">Python</span><span class="chip">Qwen3</span>
+                  <span class="chip">llama.cpp</span><span class="chip">KoboldCpp</span><span class="chip">SillyTavern</span><span class="chip">CUDA</span>
                 </div>
                 <button type="button" class="card-more stretched-link mt-3" data-bs-toggle="modal" data-bs-target="#work-llama">查看細節 →</button>
               </div>
@@ -704,8 +704,7 @@
        並在上面對應的卡片加上 data-bs-target="#新的id"。
 
        新增一張圖：在 .work-gallery 裡貼一個 <figure>，
-       輪播的箭頭、指示點與縮圖列都由 JS 自動產生，不用自己寫。
-       超過 4 張時會自動長出縮圖列。
+       兩張以上時，輪播箭頭與縮圖列都由 JS 自動產生，不用自己寫。
 
        想改放影片：把 .work-gallery 換成
        <div class="work-video ratio ratio-16x9" data-yt="影片ID"></div>
@@ -722,34 +721,30 @@
         <div class="modal-body">
 
           <div class="work-gallery">
-            <!-- 【待補】建議截圖：start-all.bat 開起三個視窗的畫面 -->
             <figure>
-              <img loading="lazy" src="./assets/img/portfolio/project-landscape-1.jpg" alt="三個本地推論服務的啟動畫面">
-              <figcaption>一次開起三個服務：文字 server（:8080）、視覺 server（:8081），以及相容層（:11435）。</figcaption>
+              <img loading="lazy" src="./assets/img/works/llamacpp-local-chat.gif" alt="SillyTavern 本地模型對話、終端輸出與 GPU 資源圖表">
+              <figcaption>在 SillyTavern 中與本機大型語言模型實際對話，回覆以串流方式逐步顯示；右側同步呈現推論終端與 Windows GPU 資源圖表。</figcaption>
             </figure>
-            <!-- 【待補】建議截圖：ollama-shim.py 的路由邏輯，或它的請求 log -->
             <figure>
-              <img loading="lazy" src="./assets/img/portfolio/project-landscape-2.jpg" alt="相容層依模型名稱分流的程式碼">
-              <figcaption>相容層依模型名稱分流——名稱含 <code>vl</code> 的請求送到視覺後端，其餘送到文字後端。</figcaption>
+              <img loading="lazy" src="./assets/img/works/llamacpp-openai-compatible.jpg" alt="SillyTavern 連接本機 KoboldCpp 模型的 API 設定">
+              <figcaption>SillyTavern 透過 <code>127.0.0.1</code> 的本機 API 連接 KoboldCpp，並確認 Gemma 模型已上線；對話介面與推論後端各自獨立。</figcaption>
             </figure>
-            <!-- 【待補】建議截圖：nvidia-smi 顯存釋放前後的對照 -->
             <figure>
-              <img loading="lazy" src="./assets/img/portfolio/project-landscape-3.jpg" alt="顯存釋放前後的對照">
-              <figcaption>兩台 server 都帶 <code>--sleep-idle-seconds 1</code>：閒置一秒自動吐回顯存，實測釋放約 17.8 GB，喚醒重新推論約 9 秒。</figcaption>
+              <img loading="lazy" src="./assets/img/works/llamacpp-resource-control.gif" alt="llama.cpp 串流輸出與 NVIDIA GPU 即時資源用量">
+              <figcaption>實際呼叫 llama.cpp 的 OpenAI 相容 API：左側呈現繁體中文逐字串流輸出，右側同步採集 RTX 5090 的 GPU 使用率、顯存與功耗；本次推論峰值達 97%。</figcaption>
             </figure>
           </div>
 
           <div class="work-notes text-secondary">
             <p>
-              起因是既有的 ComfyUI 節點與腳本共二十來支，全都寫死了 Ollama 的 API 形狀，
-              而 llama.cpp 只講 OpenAI 格式。與其改二十個檔案，不如加一層轉譯——
-              之後想切回 Ollama，也只要把 base_url 改回去。
+              本地模型部署依用途分流：llama.cpp 提供文字與視覺模型的 OpenAI 相容端點，
+              KoboldCpp 則作為 SillyTavern 的長篇對話後端。前端只需連接本機 API，
+              模型推論與對話資料不必交給外部雲端服務。
             </p>
             <p>
-              轉譯層最容易被忽略的是<strong>取樣參數</strong>：Ollama 的預設值來自 Modelfile，
-              llama.cpp 自己另有一套。不補上的話模型行為會變——
-              其中 <code>repeat_penalty</code> 尤其要緊，因為提示詞指南靠「每次重複輸出同一段角色描述」
-              來錨定角色，開著重複懲罰反而會讓模型避開已寫過的詞、自行發明設定。
+              為了讓原本使用 Ollama API 的 ComfyUI 節點與腳本繼續運作，另以相容層將請求轉送至 llama.cpp，
+              不必逐一重寫既有工具。服務閒置時會釋放模型占用的顯存，需要推論時再重新載入，
+              讓語言模型與影像生成工作流可以共用同一張 GPU。
             </p>
           </div>
 
