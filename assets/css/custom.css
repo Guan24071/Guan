@@ -1,0 +1,426 @@
+/* ==========================================================================
+   個人技術網站 — 客製樣式
+   疊加在 wave-bsb.css 之上，原始模板檔案完全不動。
+   所有深色規則都收斂在 [data-bs-theme="dark"] 之下，
+   因此切回淺色時會自動還原成模板原本的外觀。
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. 字型 — 中英混排
+   Latin 交給 Oswald（模板原字型，標題有力道），CJK 落到 Noto Sans TC。
+   -------------------------------------------------------------------------- */
+:root {
+  --site-sans: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --site-display: "Oswald", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  --site-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+body {
+  font-family: var(--site-sans);
+  letter-spacing: .01em;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6,
+.display-1, .display-2, .display-3, .display-4, .display-5, .display-6 {
+  font-family: var(--site-display);
+  letter-spacing: 0;
+  line-height: 1.3;
+}
+
+/* 中文在 display 級別的字級要收一點，不然長句會爆版 */
+.display-1 { font-size: clamp(2.5rem, 6vw, 4.5rem); }
+.display-3 { font-size: clamp(1.9rem, 4.4vw, 3.25rem); }
+
+code, .font-mono { font-family: var(--site-mono); }
+
+/* --------------------------------------------------------------------------
+   2. 深色主題色票
+   -------------------------------------------------------------------------- */
+[data-bs-theme="dark"] {
+  --bs-primary: #58a6ff;
+  --bs-primary-rgb: 88, 166, 255;
+  --bs-primary-text-emphasis: #79c0ff;
+  --bs-primary-bg-subtle: #0d2847;
+  --bs-primary-border-subtle: #1f4d80;
+
+  --bs-accent: #f0883e;
+  --bs-accent-rgb: 240, 136, 62;
+
+  --bs-body-bg: #0d1117;
+  --bs-body-color: #c9d1d9;
+  --bs-emphasis-color: #f0f6fc;
+  --bs-secondary-color: #8b949e;
+  --bs-secondary-color-rgb: 139, 148, 158;
+  --bs-border-color: #30363d;
+  --bs-border-color-translucent: rgba(240, 246, 252, .1);
+  --bs-heading-color: #f0f6fc;
+  --bs-link-color: #58a6ff;
+  --bs-link-hover-color: #79c0ff;
+
+  --site-surface: #161b22;
+  --site-surface-2: #11161d;
+
+  color-scheme: dark;
+}
+
+/* --------------------------------------------------------------------------
+   3. 把模板寫死的淺色區塊底色換掉
+   -------------------------------------------------------------------------- */
+[data-bs-theme="dark"] .bsb-tpl-bg-blue       { background: #11161d !important; }
+[data-bs-theme="dark"] .bsb-tpl-bg-alice-blue { background: #11161d !important; }
+[data-bs-theme="dark"] .bsb-tpl-bg-sea-shell  { background: #11161d !important; }
+[data-bs-theme="dark"] .bsb-tpl-bg-linen      { background: #11161d !important; }
+[data-bs-theme="dark"] .bg-light              { background-color: var(--site-surface-2) !important; }
+[data-bs-theme="dark"] .border-light          { border-color: var(--bs-border-color) !important; }
+[data-bs-theme="dark"] .border-light-subtle   { border-color: var(--bs-border-color) !important; }
+
+/* 圖示徽章的四個粉彩底色 → 改成主色的半透明底 */
+[data-bs-theme="dark"] .bsb-tpl-bg-yellow,
+[data-bs-theme="dark"] .bsb-tpl-bg-green,
+[data-bs-theme="dark"] .bsb-tpl-bg-pink,
+[data-bs-theme="dark"] .bsb-tpl-bg-cyan {
+  background: rgba(var(--bs-primary-rgb), .12) !important;
+  color: var(--bs-primary) !important;
+  border: 1px solid rgba(var(--bs-primary-rgb), .25);
+}
+
+/* --------------------------------------------------------------------------
+   4. 元件：按鈕 / 卡片 / 表列
+   Bootstrap 編譯後的 .btn-* 是寫死的 hex，不吃 CSS 變數，必須整組覆寫。
+   -------------------------------------------------------------------------- */
+[data-bs-theme="dark"] .btn-primary {
+  --bs-btn-color: #0d1117;          --bs-btn-bg: #58a6ff;          --bs-btn-border-color: #58a6ff;
+  --bs-btn-hover-color: #0d1117;    --bs-btn-hover-bg: #79c0ff;    --bs-btn-hover-border-color: #79c0ff;
+  --bs-btn-active-color: #0d1117;   --bs-btn-active-bg: #90cbff;   --bs-btn-active-border-color: #90cbff;
+  --bs-btn-disabled-color: #0d1117; --bs-btn-disabled-bg: #58a6ff; --bs-btn-disabled-border-color: #58a6ff;
+}
+[data-bs-theme="dark"] .btn-outline-primary {
+  --bs-btn-color: #58a6ff;          --bs-btn-border-color: #3a6fa8;
+  --bs-btn-hover-color: #0d1117;    --bs-btn-hover-bg: #58a6ff;    --bs-btn-hover-border-color: #58a6ff;
+  --bs-btn-active-color: #0d1117;   --bs-btn-active-bg: #58a6ff;   --bs-btn-active-border-color: #58a6ff;
+  --bs-btn-disabled-color: #58a6ff; --bs-btn-disabled-border-color: #3a6fa8;
+}
+[data-bs-theme="dark"] .btn-accent {
+  --bs-btn-color: #0d1117;          --bs-btn-bg: #f0883e;          --bs-btn-border-color: #f0883e;
+  --bs-btn-hover-color: #0d1117;    --bs-btn-hover-bg: #ffa657;    --bs-btn-hover-border-color: #ffa657;
+  --bs-btn-active-color: #0d1117;   --bs-btn-active-bg: #ffa657;   --bs-btn-active-border-color: #ffa657;
+}
+[data-bs-theme="dark"] .btn-outline-secondary {
+  --bs-btn-color: #c9d1d9;          --bs-btn-border-color: #30363d;
+  --bs-btn-hover-color: #f0f6fc;    --bs-btn-hover-bg: #21262d;    --bs-btn-hover-border-color: #8b949e;
+  --bs-btn-active-color: #f0f6fc;   --bs-btn-active-bg: #21262d;   --bs-btn-active-border-color: #8b949e;
+}
+
+[data-bs-theme="dark"] .card {
+  --bs-card-bg: var(--site-surface);
+  --bs-card-border-color: var(--bs-border-color);
+  --bs-card-color: var(--bs-body-color);
+}
+[data-bs-theme="dark"] .shadow-sm { box-shadow: 0 1px 3px rgba(1, 4, 9, .6) !important; }
+[data-bs-theme="dark"] .shadow-lg { box-shadow: 0 8px 32px rgba(1, 4, 9, .8) !important; }
+
+[data-bs-theme="dark"] .list-group {
+  --bs-list-group-bg: transparent;
+  --bs-list-group-color: var(--bs-body-color);
+  --bs-list-group-border-color: var(--bs-border-color);
+}
+[data-bs-theme="dark"] .accordion {
+  --bs-accordion-bg: transparent;
+  --bs-accordion-color: var(--bs-body-color);
+  --bs-accordion-border-color: var(--bs-border-color);
+  --bs-accordion-btn-color: var(--bs-emphasis-color);
+  --bs-accordion-active-color: var(--bs-primary);
+  --bs-accordion-active-bg: transparent;
+  --bs-accordion-btn-focus-box-shadow: 0 0 0 .2rem rgba(var(--bs-primary-rgb), .25);
+}
+/* Bootstrap 的 accordion 箭頭是深色 SVG data URI，深色底下要反相 */
+[data-bs-theme="dark"] .accordion-button::after,
+[data-bs-theme="dark"] .accordion-button:not(.collapsed)::after {
+  filter: invert(1) grayscale(1) brightness(2);
+}
+[data-bs-theme="dark"] .offcanvas {
+  --bs-offcanvas-bg: var(--site-surface);
+  --bs-offcanvas-color: var(--bs-body-color);
+}
+[data-bs-theme="dark"] .btn-close { filter: invert(1) grayscale(1) brightness(2); }
+[data-bs-theme="dark"] .text-secondary { color: var(--bs-secondary-color) !important; }
+[data-bs-theme="dark"] .link-secondary { color: var(--bs-secondary-color) !important; }
+[data-bs-theme="dark"] .link-secondary:hover { color: var(--bs-primary) !important; }
+[data-bs-theme="dark"] .link-dark { color: var(--bs-secondary-color) !important; }
+[data-bs-theme="dark"] .link-dark:hover { color: var(--bs-primary) !important; }
+
+/* 導覽列 */
+[data-bs-theme="dark"] .navbar {
+  background: rgba(13, 17, 23, .85) !important;
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--bs-border-color);
+}
+[data-bs-theme="dark"] .navbar .nav-link { color: var(--bs-secondary-color); }
+[data-bs-theme="dark"] .navbar .nav-link:hover,
+[data-bs-theme="dark"] .navbar .nav-link.active { color: var(--bs-primary); }
+[data-bs-theme="dark"] .navbar-toggler { color: var(--bs-body-color); }
+.navbar-brand-text {
+  font-family: var(--site-display);
+  font-weight: 700;
+  font-size: 1.35rem;
+  letter-spacing: .02em;
+}
+.navbar-brand-text .dot { color: var(--bs-primary); }
+
+/* --------------------------------------------------------------------------
+   5. 螢光筆效果 — 深色底下改成主色的底線光暈
+   -------------------------------------------------------------------------- */
+[data-bs-theme="dark"] mark,
+[data-bs-theme="dark"] .bsb-tpl-highlight {
+  background: linear-gradient(120deg, rgba(var(--bs-primary-rgb), .28), rgba(var(--bs-primary-rgb), .28)) !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% 28% !important;
+  background-position: 0 88% !important;
+  color: inherit !important;
+  padding: 0 .1em !important;
+}
+[data-bs-theme="dark"] .text-accent { color: var(--bs-accent) !important; }
+
+/* 模板的手寫字型 Satisfy 不含中文字符，改用同一套顯示字型 */
+.bsb-tpl-font-hw {
+  font-family: var(--site-display) !important;
+  font-weight: 700 !important;
+}
+
+/* --------------------------------------------------------------------------
+   6. （原本的技能進度條已移除：技術棧改成分類卡 + 標籤，不給自己打分數）
+
+   7. 自製元件：經歷時間軸
+   -------------------------------------------------------------------------- */
+.tl { position: relative; padding-left: 2.5rem; }
+.tl::before {
+  content: ""; position: absolute; left: .75rem; top: .5rem; bottom: .5rem; width: 2px;
+  background: linear-gradient(180deg, var(--bs-primary), rgba(var(--bs-primary-rgb), .15));
+}
+.tl-item { position: relative; padding-bottom: 2.5rem; }
+.tl-item:last-child { padding-bottom: 0; }
+.tl-item::before {
+  content: ""; position: absolute; left: -2.5rem; top: .35rem;
+  width: 1.625rem; height: 1.625rem; border-radius: 50%;
+  background: var(--bs-body-bg); border: 2px solid var(--bs-primary);
+  box-shadow: 0 0 0 4px rgba(var(--bs-primary-rgb), .12);
+}
+.tl-date {
+  font-family: var(--site-mono); font-size: .8125rem; letter-spacing: .04em;
+  color: var(--bs-primary); margin-bottom: .35rem;
+}
+.tl-title { font-size: 1.25rem; margin-bottom: .15rem; }
+.tl-org { color: var(--bs-secondary-color); font-size: .9375rem; margin-bottom: .75rem; }
+.tl-item ul { padding-left: 1.15rem; margin-bottom: 0; }
+.tl-item ul li { margin-bottom: .4rem; }
+
+/* --------------------------------------------------------------------------
+   8. 自製元件：技術標籤
+   -------------------------------------------------------------------------- */
+.chip {
+  display: inline-block; padding: .2rem .6rem; margin: 0 .3rem .4rem 0;
+  font-size: .75rem; font-family: var(--site-mono); line-height: 1.6;
+  border-radius: 999px; border: 1px solid var(--bs-border-color);
+  color: var(--bs-secondary-color); white-space: nowrap;
+}
+.chip-primary {
+  border-color: rgba(var(--bs-primary-rgb), .35);
+  background: rgba(var(--bs-primary-rgb), .1);
+  color: var(--bs-primary);
+}
+
+/* --------------------------------------------------------------------------
+   9. 作品集卡片
+   -------------------------------------------------------------------------- */
+.project-card { height: 100%; overflow: hidden; transition: transform .25s ease, box-shadow .25s ease; }
+.project-card:hover { transform: translateY(-4px); }
+/* height:auto 是必要的 —— <img> 的 height 屬性會變成 CSS height，
+   會壓過 aspect-ratio，讓縮圖被拉成直式。 */
+.project-card .project-thumb { width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; }
+@media (prefers-reduced-motion: reduce) {
+  .project-card { transition: none; }
+  .project-card:hover { transform: none; }
+}
+
+/* --------------------------------------------------------------------------
+   10. Hero 頭像 — 模板的 blob 遮罩 + 一圈光暈
+   -------------------------------------------------------------------------- */
+.hero-photo { position: relative; display: inline-block; }
+.hero-photo::after {
+  content: ""; position: absolute; inset: -8%; z-index: -1; border-radius: 50%;
+  background: radial-gradient(circle at 50% 50%, rgba(var(--bs-primary-rgb), .22), transparent 68%);
+}
+
+/* --------------------------------------------------------------------------
+   11. 主題切換按鈕
+   -------------------------------------------------------------------------- */
+.theme-toggle {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 2.5rem; height: 2.5rem; border-radius: 50%; flex: none;
+  border: 1px solid var(--bs-border-color); background: transparent;
+  color: var(--bs-body-color); cursor: pointer;
+  transition: border-color .2s, color .2s;
+}
+.theme-toggle:hover { border-color: var(--bs-primary); color: var(--bs-primary); }
+.theme-toggle .icon-sun { display: none; }
+[data-bs-theme="dark"] .theme-toggle .icon-sun { display: block; }
+[data-bs-theme="dark"] .theme-toggle .icon-moon { display: none; }
+
+/* --------------------------------------------------------------------------
+   12. 雜項
+   -------------------------------------------------------------------------- */
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+/* 錨點捲動時避免標題被黏性導覽列蓋住。
+   導覽列 min-height 在一般寬度是 72px、xl 以上會撐到 125px，所以分兩段。 */
+section[id] { scroll-margin-top: 88px; }
+@media (min-width: 1200px) { section[id] { scroll-margin-top: 140px; } }
+
+.section-eyebrow {
+  font-family: var(--site-mono); font-size: .8125rem; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--bs-primary); margin-bottom: .75rem;
+}
+
+a.skip-link {
+  position: absolute; left: -9999px; top: 0; z-index: 9999;
+  padding: .75rem 1.25rem; background: var(--bs-primary); color: #0d1117;
+}
+a.skip-link:focus { left: 0; }
+
+/* --------------------------------------------------------------------------
+   13. 主力專案：左邊功能清單 + 右邊影片
+   -------------------------------------------------------------------------- */
+.fn-nav { gap: .375rem; }
+.fn-nav .nav-link {
+  text-align: left; width: 100%;
+  border: 1px solid var(--bs-border-color);
+  border-radius: .5rem;
+  padding: .7rem .9rem;
+  color: var(--bs-body-color);
+  background: transparent;
+  transition: border-color .18s, background-color .18s, color .18s;
+}
+.fn-nav .nav-link:hover {
+  border-color: rgba(var(--bs-primary-rgb), .5);
+  color: var(--bs-emphasis-color);
+}
+.fn-nav .nav-link.active {
+  background: rgba(var(--bs-primary-rgb), .12);
+  border-color: var(--bs-primary);
+  color: var(--bs-primary);
+}
+.fn-nav .fn-index {
+  font-family: var(--site-mono); font-size: .75rem;
+  color: var(--bs-secondary-color); margin-right: .5rem;
+}
+.fn-nav .nav-link.active .fn-index { color: var(--bs-primary); }
+
+/* 影片舞台：預設只顯示縮圖，點了才載入 YouTube iframe（每支嵌入約 1MB JS） */
+.video-stage {
+  position: relative; overflow: hidden;
+  border-radius: .75rem; border: 1px solid var(--bs-border-color);
+  background: var(--site-surface, #161b22);
+}
+.video-stage img.poster { width: 100%; height: 100%; object-fit: cover; display: block; }
+.video-stage iframe { width: 100%; height: 100%; border: 0; display: block; }
+.video-stage .play-btn {
+  position: absolute; inset: 0; display: flex;
+  align-items: center; justify-content: center;
+  border: 0; background: rgba(1, 4, 9, .35); cursor: pointer;
+  transition: background-color .2s;
+}
+.video-stage .play-btn:hover { background: rgba(1, 4, 9, .15); }
+.video-stage .play-btn span {
+  display: flex; align-items: center; justify-content: center;
+  width: 4.5rem; height: 4.5rem; border-radius: 50%;
+  background: var(--bs-primary); color: #0d1117;
+  box-shadow: 0 6px 24px rgba(1, 4, 9, .5);
+  transition: transform .2s;
+}
+.video-stage .play-btn:hover span { transform: scale(1.08); }
+@media (prefers-reduced-motion: reduce) {
+  .video-stage .play-btn span, .video-stage .play-btn { transition: none; }
+  .video-stage .play-btn:hover span { transform: none; }
+}
+/* 還沒填影片 ID 時的狀態 */
+.video-stage.is-empty .play-btn { cursor: default; background: rgba(1, 4, 9, .45); }
+.video-stage.is-empty .play-btn span {
+  width: auto; height: auto; padding: .5rem 1rem; border-radius: 999px;
+  font-size: .8125rem; font-family: var(--site-mono);
+  background: var(--bs-secondary-color); color: var(--bs-body-bg);
+}
+.fn-caption { min-height: 3.5rem; }
+
+/* --------------------------------------------------------------------------
+   14. 技術分類卡裡的標籤：比一般 chip 大一點，因為它們是這一區的主角
+   -------------------------------------------------------------------------- */
+#skills .chip { font-size: .8125rem; padding: .3rem .7rem; }
+
+/* --------------------------------------------------------------------------
+   15. 「查看細節」卡片 → Modal
+   -------------------------------------------------------------------------- */
+.card-more {
+  font-size: .875rem; font-weight: 600; text-decoration: none;
+  color: var(--bs-primary); border: 0; background: none; padding: 0;
+}
+.card-more:hover { color: var(--bs-link-hover-color, var(--bs-primary)); }
+/* stretched-link 讓整張卡都可點，但焦點仍落在真正的按鈕上（鍵盤可用） */
+.project-card:has(.stretched-link) { cursor: pointer; }
+
+[data-bs-theme="dark"] .modal { --bs-modal-bg: var(--site-surface); --bs-modal-color: var(--bs-body-color); --bs-modal-border-color: var(--bs-border-color); --bs-modal-header-border-color: var(--bs-border-color); }
+.work-modal .modal-title { font-family: var(--site-display); }
+
+/* 圖片輪播 */
+.work-carousel { border-radius: .75rem; overflow: hidden; border: 1px solid var(--bs-border-color); background: var(--bs-body-bg); }
+/* 截圖的長寬比落差很大（直式的手機截圖可以到 800x1120），
+   不設上限的話說明文字與縮圖列會被推出畫面外。
+   contain + 深色底，讓letterbox 看起來是刻意的。 */
+.work-carousel .carousel-item img {
+  width: 100%; height: auto; display: block;
+  max-height: 60vh; object-fit: contain;
+  background: var(--site-surface-2, #11161d);
+}
+.work-cap {
+  padding: .85rem 1rem; font-size: .9375rem; line-height: 1.7;
+  color: var(--bs-secondary-color); background: var(--bs-body-bg);
+  border-top: 1px solid var(--bs-border-color);
+}
+/* 箭頭給一個深色圓底，才不會在淺色截圖上消失 */
+.work-carousel .carousel-control-prev,
+.work-carousel .carousel-control-next { width: 3.5rem; opacity: 1; }
+.work-carousel .carousel-control-prev-icon,
+.work-carousel .carousel-control-next-icon {
+  width: 2.5rem; height: 2.5rem; border-radius: 50%; background-size: 1.1rem;
+  background-color: rgba(1, 4, 9, .65);
+}
+.work-carousel .carousel-control-prev:hover .carousel-control-prev-icon,
+.work-carousel .carousel-control-next:hover .carousel-control-next-icon { background-color: rgba(1, 4, 9, .9); }
+/* 指示點改成靜態排在說明底下。Bootstrap 預設絕對定位在輪播底部，會壓到說明文字。 */
+.work-carousel .carousel-indicators {
+  position: static; margin: 0; padding: .7rem 0;
+  background: var(--bs-body-bg); border-top: 1px solid var(--bs-border-color);
+}
+.work-carousel .carousel-indicators [data-bs-target] {
+  width: 1.75rem; height: 3px; border: 0; border-radius: 999px;
+  background-color: var(--bs-secondary-color); opacity: .4;
+}
+.work-carousel .carousel-indicators .active { background-color: var(--bs-primary); opacity: 1; }
+
+/* 縮圖列：圖多（>4 張）時才由 JS 產生 */
+.work-thumbs { display: flex; gap: .5rem; overflow-x: auto; padding: .75rem .125rem .25rem; }
+.work-thumbs button {
+  flex: 0 0 auto; width: 5.5rem; padding: 0; border-radius: .375rem; overflow: hidden;
+  border: 2px solid transparent; background: none; opacity: .55;
+  transition: opacity .18s, border-color .18s;
+}
+.work-thumbs button:hover { opacity: .85; }
+.work-thumbs button.active { opacity: 1; border-color: var(--bs-primary); }
+.work-thumbs img { width: 100%; height: 3.25rem; object-fit: cover; display: block; }
+
+.work-notes { margin-top: 1.25rem; line-height: 1.8; }
+.work-notes p:last-child { margin-bottom: 0; }
+@media (prefers-reduced-motion: reduce) {
+  .work-thumbs button { transition: none; }
+}
