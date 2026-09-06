@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>黃冠皓 — 全端工程師</title>
-  <meta name="description" content="全端工程師。以 C# / ASP.NET Core 與 Vue 3 開發系統，在本機部署大型語言模型並接進產品，也自己維運網域與郵件伺服器。">
+  <meta name="description" content="全端工程師。以 C# / ASP.NET Core 與 Vue 3 開發系統，在本機部署大型語言模型並接進產品，也自己維運網域與伺服器。">
   <meta name="author" content="黃冠皓">
 
   <meta property="og:type" content="website">
@@ -18,7 +18,9 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@400;500;700;900&display=swap"
+    rel="stylesheet">
 
   <!-- CSS：模板原檔（勿動）+ 客製覆寫 -->
   <link rel="stylesheet" href="./assets/css/wave-bsb.css">
@@ -32,7 +34,7 @@
         if (saved === 'light' || saved === 'dark') {
           document.documentElement.setAttribute('data-bs-theme', saved);
         }
-      } catch (e) { /* 無痕模式讀不到 localStorage，維持預設深色 */ }
+      } catch (e) { /* 無痕模式讀不到 localStorage，維持預設深色 */}
     })();
   </script>
 </head>
@@ -46,26 +48,35 @@
        ============================================================ -->
   <header id="header" class="sticky-top bsb-tpl-header-sticky bsb-tpl-header-sticky-animationX">
 
-    <nav id="scrollspyNav" class="navbar navbar-expand-lg bsb-tpl-bg-blue bsb-navbar bsb-navbar-hover bsb-navbar-caret bsb-tpl-navbar-sticky" data-bsb-sticky-target="#header">
+    <nav id="scrollspyNav"
+      class="navbar navbar-expand-lg bsb-tpl-bg-blue bsb-navbar bsb-navbar-hover bsb-navbar-caret bsb-tpl-navbar-sticky"
+      data-bsb-sticky-target="#header">
       <div class="container">
 
         <a class="navbar-brand navbar-brand-text text-body-emphasis text-decoration-none" href="#hero">
-          網站開發中並非最終版<span class="dot">.</span>
+          網站開發中
         </a>
 
         <div class="d-flex align-items-center gap-2 order-lg-last">
           <button class="theme-toggle" type="button" id="themeToggle" aria-label="切換深色／淺色主題" title="切換深色／淺色主題">
-            <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
-              <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
+            <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+              viewBox="0 0 16 16" aria-hidden="true">
+              <path
+                d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
             </svg>
-            <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
-              <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z" />
+            <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+              viewBox="0 0 16 16" aria-hidden="true">
+              <path
+                d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z" />
             </svg>
           </button>
 
-          <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="開啟選單">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
-              <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+          <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="開啟選單">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16"
+              aria-hidden="true">
+              <path fill-rule="evenodd"
+                d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
             </svg>
           </button>
         </div>
@@ -77,12 +88,18 @@
           </div>
           <div class="offcanvas-body">
             <ul id="bsb-tpl-navbar" class="navbar-nav justify-content-end flex-grow-1">
-              <li class="nav-item"><a class="nav-link active" href="#hero" data-bs-dismiss="offcanvas" data-bs-target="#offcanvasNavbar">首頁</a></li>
-              <li class="nav-item"><a class="nav-link" href="#about" data-bs-dismiss="offcanvas" data-bs-target="#offcanvasNavbar">關於我</a></li>
-              <li class="nav-item"><a class="nav-link" href="#skills" data-bs-dismiss="offcanvas" data-bs-target="#offcanvasNavbar">技術棧</a></li>
-              <li class="nav-item"><a class="nav-link" href="#projects" data-bs-dismiss="offcanvas" data-bs-target="#offcanvasNavbar">作品</a></li>
-              <li class="nav-item"><a class="nav-link" href="#experience" data-bs-dismiss="offcanvas" data-bs-target="#offcanvasNavbar">經歷</a></li>
-              <li class="nav-item"><a class="nav-link" href="#contact" data-bs-dismiss="offcanvas" data-bs-target="#offcanvasNavbar">聯絡</a></li>
+              <li class="nav-item"><a class="nav-link active" href="#hero" data-bs-dismiss="offcanvas"
+                  data-bs-target="#offcanvasNavbar">首頁</a></li>
+              <li class="nav-item"><a class="nav-link" href="#about" data-bs-dismiss="offcanvas"
+                  data-bs-target="#offcanvasNavbar">關於我</a></li>
+              <li class="nav-item"><a class="nav-link" href="#skills" data-bs-dismiss="offcanvas"
+                  data-bs-target="#offcanvasNavbar">技術棧</a></li>
+              <li class="nav-item"><a class="nav-link" href="#projects" data-bs-dismiss="offcanvas"
+                  data-bs-target="#offcanvasNavbar">作品</a></li>
+              <li class="nav-item"><a class="nav-link" href="#experience" data-bs-dismiss="offcanvas"
+                  data-bs-target="#offcanvasNavbar">經歷</a></li>
+              <li class="nav-item"><a class="nav-link" href="#contact" data-bs-dismiss="offcanvas"
+                  data-bs-target="#offcanvasNavbar">聯絡</a></li>
             </ul>
           </div>
         </div>
@@ -106,7 +123,8 @@
 
             <h1 class="display-3 fw-bolder mb-4">
               我是黃冠皓，<br>
-              一位<mark class="bsb-tpl-highlight bsb-tpl-highlight-blue"><span class="bsb-tpl-font-hw text-accent">全端</span></mark>工程師。
+              一位<mark class="bsb-tpl-highlight bsb-tpl-highlight-blue"><span
+                  class="bsb-tpl-font-hw text-accent">全端</span></mark>工程師。
             </h1>
 
             <p class="fs-4 text-secondary mb-4">
@@ -125,15 +143,20 @@
             <div class="d-grid gap-2 d-sm-flex">
               <a href="#projects" class="btn btn-primary bsb-btn-xl rounded-pill px-4">
                 查看我的作品
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
-                  <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"
+                  aria-hidden="true">
+                  <path fill-rule="evenodd"
+                    d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
                 </svg>
               </a>
               <!-- 【待補】把簡歷 PDF 放到 assets/files/resume.pdf -->
               <a href="./assets/files/resume.pdf" class="btn btn-outline-primary bsb-btn-xl rounded-pill px-4" download>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
-                  <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" />
-                  <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z" />
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"
+                  aria-hidden="true">
+                  <path
+                    d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" />
+                  <path
+                    d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z" />
                 </svg>
                 下載簡歷
               </a>
@@ -143,9 +166,8 @@
           <div class="col-12 col-lg-5 text-center order-0 order-lg-1">
             <!-- 【待補】換成你的個人照，1100×1100 正方形、主體置中（會被圓形遮罩裁切） -->
             <span class="hero-photo">
-              <img class="img-fluid" src="./assets/img/hero/hero-home.jpg" alt="黃冠皓的個人照"
-                   width="1100" height="1100"
-                   style="-webkit-mask-image: url(./assets/img/hero/hero-blob-1.svg); mask-image: url(./assets/img/hero/hero-blob-1.svg);">
+              <img class="img-fluid" src="./assets/img/hero/hero-home.jpg" alt="黃冠皓的個人照" width="1100" height="1100"
+                style="-webkit-mask-image: url(./assets/img/hero/hero-blob-1.svg); mask-image: url(./assets/img/hero/hero-blob-1.svg);">
             </span>
           </div>
 
@@ -162,15 +184,17 @@
         <div class="row gy-5 gy-lg-0 align-items-lg-center">
 
           <div class="col-12 col-lg-5">
-            <img class="img-fluid rounded-4" loading="lazy" src="./assets/img/about/about-img-1.png" alt="" width="491" height="511">
+            <img class="img-fluid rounded-4" loading="lazy" src="./assets/img/about/about-img-1.png" alt="" width="491"
+              height="511">
           </div>
 
           <div class="col-12 col-lg-6 offset-lg-1">
             <p class="section-eyebrow">ABOUT ME</p>
-            <h2 class="display-3 fw-bolder mb-4">關於<mark class="bsb-tpl-highlight bsb-tpl-highlight-blue"><span class="bsb-tpl-font-hw text-accent">我</span></mark></h2>
+            <h2 class="display-3 fw-bolder mb-4">關於<mark class="bsb-tpl-highlight bsb-tpl-highlight-blue"><span
+                  class="bsb-tpl-font-hw text-accent">我</span></mark></h2>
 
             <p class="fs-5 text-secondary mb-4">
-              從倉儲、行政到半導體業助理管理師，我做的一直是「把流程理清楚、把資料整理成別人看得懂的樣子」，
+              從倉儲、行政到助理管理師，我做的一直是「把流程理清楚、把資料整理成別人看得懂的樣子」，
               這也是我後來走軟體開發的原因。
             </p>
 
@@ -178,11 +202,13 @@
 
               <div class="accordion-item">
                 <h3 class="accordion-header" id="aboutHeadingOne">
-                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#aboutOne" aria-expanded="true" aria-controls="aboutOne">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#aboutOne"
+                    aria-expanded="true" aria-controls="aboutOne">
                     我怎麼跟團隊一起工作
                   </button>
                 </h3>
-                <div id="aboutOne" class="accordion-collapse collapse show" aria-labelledby="aboutHeadingOne" data-bs-parent="#aboutAccordion">
+                <div id="aboutOne" class="accordion-collapse collapse show" aria-labelledby="aboutHeadingOne"
+                  data-bs-parent="#aboutAccordion">
                   <div class="accordion-body text-secondary">
                     在 ReTrust 的團隊裡，我負責的會員系統是其他四個領域共同依賴的基礎。
                     因此我把跨領域的介面規範、檔案負責範圍與設計取捨整理成專案文件，
@@ -195,11 +221,13 @@
 
               <div class="accordion-item">
                 <h3 class="accordion-header" id="aboutHeadingTwo">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#aboutTwo" aria-expanded="false" aria-controls="aboutTwo">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#aboutTwo" aria-expanded="false" aria-controls="aboutTwo">
                     我怎麼做技術決定
                   </button>
                 </h3>
-                <div id="aboutTwo" class="accordion-collapse collapse" aria-labelledby="aboutHeadingTwo" data-bs-parent="#aboutAccordion">
+                <div id="aboutTwo" class="accordion-collapse collapse" aria-labelledby="aboutHeadingTwo"
+                  data-bs-parent="#aboutAccordion">
                   <div class="accordion-body text-secondary">
                     我習慣在動手前先確認一件事為什麼要這樣做，也願意把想清楚的理由寫下來——
                     因為程式碼會被接手，而理由不會自己留在程式碼裡。
@@ -213,11 +241,13 @@
 
               <div class="accordion-item">
                 <h3 class="accordion-header" id="aboutHeadingThree">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#aboutThree" aria-expanded="false" aria-controls="aboutThree">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#aboutThree" aria-expanded="false" aria-controls="aboutThree">
                     我最近在做什麼
                   </button>
                 </h3>
-                <div id="aboutThree" class="accordion-collapse collapse" aria-labelledby="aboutHeadingThree" data-bs-parent="#aboutAccordion">
+                <div id="aboutThree" class="accordion-collapse collapse" aria-labelledby="aboutHeadingThree"
+                  data-bs-parent="#aboutAccordion">
                   <div class="accordion-body text-secondary">
                     在自己的機器上跑大型語言模型，用 llama.cpp 架了文字與視覺兩台推論服務，
                     並寫了一層相容代理，讓既有的二十來支腳本不必改就能從 Ollama 換過來。
@@ -244,7 +274,8 @@
         <div class="row justify-content-md-center">
           <div class="col-12 col-md-10 col-lg-9 col-xl-8 text-center">
             <p class="section-eyebrow">TECH STACK</p>
-            <h2 class="display-3 fw-bolder mb-3">我的<mark class="bsb-tpl-highlight bsb-tpl-highlight-blue"><span class="bsb-tpl-font-hw text-accent">技術棧</span></mark></h2>
+            <h2 class="display-3 fw-bolder mb-3">我的<mark class="bsb-tpl-highlight bsb-tpl-highlight-blue"><span
+                  class="bsb-tpl-font-hw text-accent">技術棧</span></mark></h2>
             <p class="fs-5 text-secondary mb-0">
               後端以 C# 為主，前端用 Vue 3，兩邊都能獨立完成並交付。近一年的重心放在把本地大型語言模型接進實際產品。
             </p>
@@ -259,8 +290,10 @@
 
           <div class="col-12 col-sm-6 col-lg-4">
             <div class="badge bsb-tpl-bg-yellow p-3 mb-4">
-              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
-                <path d="M2.114 8.063V7.9c1.005-.102 1.497-.615 1.497-1.6V4.503c0-1.094.39-1.538 1.354-1.538h.273V2h-.376C3.25 2 2.49 2.759 2.49 4.352v1.524c0 1.094-.376 1.456-1.49 1.456v1.299c1.114 0 1.49.362 1.49 1.456v1.524c0 1.593.759 2.352 2.372 2.352h.376v-.964h-.273c-.964 0-1.354-.444-1.354-1.538V9.663c0-.984-.492-1.497-1.497-1.6zM13.886 7.9v.163c-1.005.103-1.497.616-1.497 1.6v1.798c0 1.094-.39 1.538-1.354 1.538h-.273v.964h.376c1.613 0 2.372-.759 2.372-2.352V10.087c0-1.094.376-1.456 1.49-1.456V7.332c-1.114 0-1.49-.362-1.49-1.456V4.352C13.51 2.759 12.75 2 11.138 2h-.376v.964h.273c.964 0 1.354.444 1.354 1.538V6.3c0 .984.492 1.497 1.497 1.6z" />
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" viewBox="0 0 16 16"
+                aria-hidden="true">
+                <path
+                  d="M2.114 8.063V7.9c1.005-.102 1.497-.615 1.497-1.6V4.503c0-1.094.39-1.538 1.354-1.538h.273V2h-.376C3.25 2 2.49 2.759 2.49 4.352v1.524c0 1.094-.376 1.456-1.49 1.456v1.299c1.114 0 1.49.362 1.49 1.456v1.524c0 1.593.759 2.352 2.372 2.352h.376v-.964h-.273c-.964 0-1.354-.444-1.354-1.538V9.663c0-.984-.492-1.497-1.497-1.6zM13.886 7.9v.163c-1.005.103-1.497.616-1.497 1.6v1.798c0 1.094-.39 1.538-1.354 1.538h-.273v.964h.376c1.613 0 2.372-.759 2.372-2.352V10.087c0-1.094.376-1.456 1.49-1.456V7.332c-1.114 0-1.49-.362-1.49-1.456V4.352C13.51 2.759 12.75 2 11.138 2h-.376v.964h.273c.964 0 1.354.444 1.354 1.538V6.3c0 .984.492 1.497 1.497 1.6z" />
               </svg>
             </div>
             <h3 class="h4 mb-3">程式語言</h3>
@@ -271,64 +304,82 @@
 
           <div class="col-12 col-sm-6 col-lg-4">
             <div class="badge bsb-tpl-bg-green p-3 mb-4">
-              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
-                <path d="M14 10a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-1a1 1 0 0 1 1-1h12zM2 9a2 2 0 0 0-2 2v1a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-1a2 2 0 0 0-2-2H2z" />
-                <path d="M5 11.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm-2 0a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zM14 3a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h12zM2 2a2 2 0 0 0-2 2v1a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2z" />
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" viewBox="0 0 16 16"
+                aria-hidden="true">
+                <path
+                  d="M14 10a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-1a1 1 0 0 1 1-1h12zM2 9a2 2 0 0 0-2 2v1a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-1a2 2 0 0 0-2-2H2z" />
+                <path
+                  d="M5 11.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm-2 0a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zM14 3a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h12zM2 2a2 2 0 0 0-2 2v1a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2z" />
                 <path d="M5 4.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm-2 0a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z" />
               </svg>
             </div>
             <h3 class="h4 mb-3">後端與資料庫</h3>
             <div>
-              <span class="chip">ASP.NET Core (.NET 10)</span><span class="chip">Entity Framework Core</span><span class="chip">RESTful API</span><span class="chip">SQL Server</span>
+              <span class="chip">ASP.NET Core (.NET 10)</span><span class="chip">Entity Framework Core</span><span
+                class="chip">RESTful API</span><span class="chip">SQL Server</span>
             </div>
           </div>
 
           <div class="col-12 col-sm-6 col-lg-4">
             <div class="badge bsb-tpl-bg-pink p-3 mb-4">
-              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
-                <path d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294l4-13zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0zm6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0z" />
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" viewBox="0 0 16 16"
+                aria-hidden="true">
+                <path
+                  d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294l4-13zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0zm6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0z" />
               </svg>
             </div>
             <h3 class="h4 mb-3">前端</h3>
             <div>
-              <span class="chip">Vue 3</span><span class="chip">Vue Router</span><span class="chip">Pinia</span><span class="chip">Axios</span><span class="chip">Vite</span>
+              <span class="chip">Vue 3</span><span class="chip">Vue Router</span><span class="chip">Pinia</span><span
+                class="chip">Axios</span><span class="chip">Vite</span>
             </div>
           </div>
 
           <div class="col-12 col-sm-6 col-lg-4">
             <div class="badge bsb-tpl-bg-cyan p-3 mb-4">
-              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
-                <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z" />
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" viewBox="0 0 16 16"
+                aria-hidden="true">
+                <path
+                  d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z" />
               </svg>
             </div>
             <h3 class="h4 mb-3">驗證與安全</h3>
             <div>
-              <span class="chip">JWT</span><span class="chip">OAuth 2.0</span><span class="chip">BCrypt</span><span class="chip">SHA-256</span><span class="chip">CORS</span>
+              <span class="chip">JWT</span><span class="chip">OAuth 2.0</span><span class="chip">BCrypt</span><span
+                class="chip">SHA-256</span><span class="chip">CORS</span>
             </div>
           </div>
 
           <div class="col-12 col-sm-6 col-lg-4">
             <div class="badge bsb-tpl-bg-yellow p-3 mb-4">
-              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
-                <path d="M4.5 3a2.5 2.5 0 0 1 5 0v9a2.5 2.5 0 0 1-5 0V3zm5.5 9V3a3.5 3.5 0 1 0-7 0v9a3.5 3.5 0 1 0 7 0zM7 3.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1H8v.5a.5.5 0 0 1-1 0V5h-.5a.5.5 0 0 1 0-1H7v-.5z" />
-                <path d="M13 6.5a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-1 0V7a.5.5 0 0 1 .5-.5zM2 6.5a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-1 0V7a.5.5 0 0 1 .5-.5z" />
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" viewBox="0 0 16 16"
+                aria-hidden="true">
+                <path
+                  d="M4.5 3a2.5 2.5 0 0 1 5 0v9a2.5 2.5 0 0 1-5 0V3zm5.5 9V3a3.5 3.5 0 1 0-7 0v9a3.5 3.5 0 1 0 7 0zM7 3.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1H8v.5a.5.5 0 0 1-1 0V5h-.5a.5.5 0 0 1 0-1H7v-.5z" />
+                <path
+                  d="M13 6.5a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-1 0V7a.5.5 0 0 1 .5-.5zM2 6.5a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-1 0V7a.5.5 0 0 1 .5-.5z" />
               </svg>
             </div>
             <h3 class="h4 mb-3">AI 與基礎設施</h3>
             <div>
-              <span class="chip">llama.cpp</span><span class="chip">vLLM</span><span class="chip">Ollama</span><span class="chip">ComfyUI</span><span class="chip">Synology NAS</span><span class="chip">DNS / DKIM</span>
+              <span class="chip">llama.cpp</span><span class="chip">vLLM</span><span class="chip">Ollama</span><span
+                class="chip">ComfyUI</span><span class="chip">Synology NAS</span><span class="chip">DNS / DKIM</span>
             </div>
           </div>
 
           <div class="col-12 col-sm-6 col-lg-4">
             <div class="badge bsb-tpl-bg-green p-3 mb-4">
-              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
-                <path d="M1 0 0 1l2.2 3.081a1 1 0 0 0 .815.419h.07a1 1 0 0 1 .708.293l2.675 2.675-2.617 2.654A3.003 3.003 0 0 0 0 13a3 3 0 1 0 5.878-.851l2.654-2.617.968.968-.305.914a1 1 0 0 0 .242 1.023l3.27 3.27a.997.997 0 0 0 1.414 0l1.586-1.586a.997.997 0 0 0 0-1.414l-3.27-3.27a1 1 0 0 0-1.023-.242L10.5 9.5l-.96-.96 2.68-2.643A3.005 3.005 0 0 0 16 3c0-.269-.035-.53-.102-.777l-2.14 2.141L12 4l-.364-1.757L13.777.102A3 3 0 0 0 9.32 5.32L6.6 8.02 3.98 5.4A1 1 0 0 1 3.687 4.69v-.07a1 1 0 0 0-.419-.815L1 0Zm9.646 10.646a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708ZM2.5 13a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z" />
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" viewBox="0 0 16 16"
+                aria-hidden="true">
+                <path
+                  d="M1 0 0 1l2.2 3.081a1 1 0 0 0 .815.419h.07a1 1 0 0 1 .708.293l2.675 2.675-2.617 2.654A3.003 3.003 0 0 0 0 13a3 3 0 1 0 5.878-.851l2.654-2.617.968.968-.305.914a1 1 0 0 0 .242 1.023l3.27 3.27a.997.997 0 0 0 1.414 0l1.586-1.586a.997.997 0 0 0 0-1.414l-3.27-3.27a1 1 0 0 0-1.023-.242L10.5 9.5l-.96-.96 2.68-2.643A3.005 3.005 0 0 0 16 3c0-.269-.035-.53-.102-.777l-2.14 2.141L12 4l-.364-1.757L13.777.102A3 3 0 0 0 9.32 5.32L6.6 8.02 3.98 5.4A1 1 0 0 1 3.687 4.69v-.07a1 1 0 0 0-.419-.815L1 0Zm9.646 10.646a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708ZM2.5 13a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z" />
               </svg>
             </div>
             <h3 class="h4 mb-3">開發工具</h3>
             <div>
-              <span class="chip">Git / GitHub</span><span class="chip">Visual Studio</span><span class="chip">SSMS</span><span class="chip">Claude Code</span><span class="chip">Codex</span><span class="chip">Unity</span>
+              <span class="chip">Git / GitHub</span><span class="chip">Visual Studio</span><span
+                class="chip">SSMS</span><span class="chip">Claude Code</span><span class="chip">Codex</span><span
+                class="chip">Unity</span>
             </div>
           </div>
 
@@ -351,7 +402,8 @@
         <div class="row justify-content-md-center">
           <div class="col-12 col-md-10 col-lg-9 col-xl-8 text-center">
             <p class="section-eyebrow">PROJECTS</p>
-            <h2 class="display-3 fw-bolder mb-3">我的<mark class="bsb-tpl-highlight bsb-tpl-highlight-blue"><span class="bsb-tpl-font-hw text-accent">作品</span></mark></h2>
+            <h2 class="display-3 fw-bolder mb-3">我的<mark class="bsb-tpl-highlight bsb-tpl-highlight-blue"><span
+                  class="bsb-tpl-font-hw text-accent">作品</span></mark></h2>
           </div>
         </div>
       </div>
@@ -372,7 +424,9 @@
               個人程式碼約 15,500 行，是專案中提交量最高的貢獻者（占全隊 commit 數約 35%）。
             </p>
             <div class="mb-3">
-              <span class="chip">C#</span><span class="chip">ASP.NET Core (.NET 10)</span><span class="chip">EF Core</span><span class="chip">SQL Server</span><span class="chip">Vue 3</span><span class="chip">Pinia</span><span class="chip">JWT</span><span class="chip">OAuth 2.0</span>
+              <span class="chip">C#</span><span class="chip">ASP.NET Core (.NET 10)</span><span class="chip">EF
+                Core</span><span class="chip">SQL Server</span><span class="chip">Vue 3</span><span
+                class="chip">Pinia</span><span class="chip">JWT</span><span class="chip">OAuth 2.0</span>
             </div>
             <!-- repo 為團隊共用、不公開，因此不放原始碼連結。
                  之後若把會員系統抽成可公開的版本，在這裡加回一顆按鈕即可。 -->
@@ -387,36 +441,30 @@
               <!-- 影片來自播放清單「資展專題展示」。data-yt 填的是影片 ID；
                    六支影片皆設為「不公開」，可透過網站嵌入播放。 -->
               <div class="fn-group-label">功能類</div>
-              <button class="nav-link active" type="button" role="tab" aria-selected="true"
-                      data-yt="Q_NFeG7miU0"
-                      data-caption="從填寫表單、收取 Email 驗證碼到完成註冊的完整流程。驗證碼的正確答案只存在後端，而且只存雜湊值；時效 10 分鐘、重發冷卻 60 秒、連錯 5 次作廢。建立帳號前後端會再查一次「這個信箱真的通過驗證了嗎」——少了這一步，直接打 API 就能繞過整個驗證流程。">
+              <button class="nav-link active" type="button" role="tab" aria-selected="true" data-yt="Q_NFeG7miU0"
+                data-caption="從填寫表單、收取 Email 驗證碼到完成註冊的完整流程。驗證碼的正確答案只存在後端，而且只存雜湊值；時效 10 分鐘、重發冷卻 60 秒、連錯 5 次作廢。建立帳號前後端會再查一次「這個信箱真的通過驗證了嗎」——少了這一步，直接打 API 就能繞過整個驗證流程。">
                 <span class="fn-index">01</span>註冊演示
               </button>
-              <button class="nav-link" type="button" role="tab" aria-selected="false"
-                      data-yt="xWg0qmmNtTw"
-                      data-caption="以 Google OAuth 2.0 登入。OAuth 導頁無法攜帶 Authorization 標頭，所以自行設計了短效、單次使用的「連結票」在導頁流程中識別身分。回程走 popup + postMessage，握手失敗也自己接住並回報，不讓視窗停在空白頁。">
+              <button class="nav-link" type="button" role="tab" aria-selected="false" data-yt="xWg0qmmNtTw"
+                data-caption="以 Google OAuth 2.0 登入。OAuth 導頁無法攜帶 Authorization 標頭，所以自行設計了短效、單次使用的「連結票」在導頁流程中識別身分。回程走 popup + postMessage，握手失敗也自己接住並回報，不讓視窗停在空白頁。">
                 <span class="fn-index">02</span>Google 登入展示
               </button>
-              <button class="nav-link" type="button" role="tab" aria-selected="false"
-                      data-yt="bWDlXBoQj7s"
-                      data-caption="在會員中心用自然語言請 AI 助理新增收件地址。模型不直接寫資料庫，只產生一張確認單；真正執行寫入的端點採動作白名單（新增／修改／刪除／設為預設／改顯示名稱），完全不經過模型，操作對象一律取自登入權杖。">
+              <button class="nav-link" type="button" role="tab" aria-selected="false" data-yt="bWDlXBoQj7s"
+                data-caption="在會員中心用自然語言請 AI 助理新增收件地址。模型不直接寫資料庫，只產生一張確認單；真正執行寫入的端點採動作白名單（新增／修改／刪除／設為預設／改顯示名稱），完全不經過模型，操作對象一律取自登入權杖。">
                 <span class="fn-index">03</span>AI 新建地址展示
               </button>
 
               <div class="fn-group-label">動畫類</div>
-              <button class="nav-link" type="button" role="tab" aria-selected="false"
-                      data-yt="pRE1S1Z7sU4"
-                      data-caption="登入頁的進場動畫與輸入欄位的互動回饋。">
+              <button class="nav-link" type="button" role="tab" aria-selected="false" data-yt="pRE1S1Z7sU4"
+                data-caption="登入頁的進場動畫與輸入欄位的互動回饋。">
                 <span class="fn-index">04</span>登入頁面動畫展示
               </button>
-              <button class="nav-link" type="button" role="tab" aria-selected="false"
-                      data-yt="d7rVrd0xOgI"
-                      data-caption="密碼輸入錯誤時的提示動畫與欄位狀態。">
+              <button class="nav-link" type="button" role="tab" aria-selected="false" data-yt="d7rVrd0xOgI"
+                data-caption="密碼輸入錯誤時的提示動畫與欄位狀態。">
                 <span class="fn-index">05</span>密碼錯誤動畫
               </button>
-              <button class="nav-link" type="button" role="tab" aria-selected="false"
-                      data-yt="4YD19_oRa4k"
-                      data-caption="登入成功後導向會員中心，以及登出時的狀態切換。">
+              <button class="nav-link" type="button" role="tab" aria-selected="false" data-yt="4YD19_oRa4k"
+                data-caption="登入成功後導向會員中心，以及登出時的狀態切換。">
                 <span class="fn-index">06</span>登入登出動畫
               </button>
             </div>
@@ -446,7 +494,8 @@
 
           <div class="col-12 col-md-6 col-xl-4">
             <article class="card project-card border-0 shadow-sm">
-              <img class="project-thumb" loading="lazy" src="./assets/img/works/llamacpp-local-chat.gif" alt="本地大型語言模型實際對話與 GPU 資源監看" width="960" height="540">
+              <img class="project-thumb" loading="lazy" src="./assets/img/works/llamacpp-local-chat.gif"
+                alt="本地大型語言模型實際對話與 GPU 資源監看" width="960" height="540">
               <div class="card-body p-4">
                 <h4 class="h5 mb-2">本地大型語言模型部署</h4>
                 <p class="text-secondary mb-3">
@@ -455,16 +504,19 @@
                   並透過 GPU 加速與閒置釋放機制調度顯存資源。
                 </p>
                 <div>
-                  <span class="chip">llama.cpp</span><span class="chip">KoboldCpp</span><span class="chip">SillyTavern</span><span class="chip">CUDA</span>
+                  <span class="chip">llama.cpp</span><span class="chip">KoboldCpp</span><span
+                    class="chip">SillyTavern</span><span class="chip">CUDA</span>
                 </div>
-                <button type="button" class="card-more stretched-link mt-3" data-bs-toggle="modal" data-bs-target="#work-llama">查看細節 →</button>
+                <button type="button" class="card-more stretched-link mt-3" data-bs-toggle="modal"
+                  data-bs-target="#work-llama">查看細節 →</button>
               </div>
             </article>
           </div>
 
           <div class="col-12 col-md-6 col-xl-4">
             <article class="card project-card border-0 shadow-sm">
-              <img class="project-thumb" loading="lazy" src="./assets/img/works/comfyui-text-to-image.jpg" alt="ComfyUI 文字生圖工作流" width="2133" height="1250">
+              <img class="project-thumb" loading="lazy" src="./assets/img/works/comfyui-text-to-image.jpg"
+                alt="ComfyUI 文字生圖工作流" width="2133" height="1250">
               <div class="card-body p-4">
                 <h4 class="h5 mb-2">ComfyUI 影像生成管線</h4>
                 <p class="text-secondary mb-3">
@@ -472,16 +524,19 @@
                   將自然語言需求整理成影像與影片生成提示詞；整套流程皆在本機端完成。
                 </p>
                 <div>
-                  <span class="chip">ComfyUI</span><span class="chip">Local LLM</span><span class="chip">Text-to-Image</span><span class="chip">i2v</span>
+                  <span class="chip">ComfyUI</span><span class="chip">Local LLM</span><span
+                    class="chip">Text-to-Image</span><span class="chip">i2v</span>
                 </div>
-                <button type="button" class="card-more stretched-link mt-3" data-bs-toggle="modal" data-bs-target="#work-comfy">查看細節 →</button>
+                <button type="button" class="card-more stretched-link mt-3" data-bs-toggle="modal"
+                  data-bs-target="#work-comfy">查看細節 →</button>
               </div>
             </article>
           </div>
 
           <div class="col-12 col-md-6 col-xl-4">
             <article class="card project-card border-0 shadow-sm">
-              <img class="project-thumb" loading="lazy" src="./assets/img/works/nas-mail-status.jpg" alt="NAS 郵件伺服器各項服務的運行狀態" width="1512" height="464">
+              <img class="project-thumb" loading="lazy" src="./assets/img/works/nas-mail-status.jpg"
+                alt="NAS 郵件伺服器各項服務的運行狀態" width="1512" height="464">
               <div class="card-body p-4">
                 <h4 class="h5 mb-2">個人伺服器與郵件服務</h4>
                 <p class="text-secondary mb-3">
@@ -490,9 +545,11 @@
                   ReTrust 的驗證碼信就是從這台寄出去的。
                 </p>
                 <div>
-                  <span class="chip">Synology NAS</span><span class="chip">DNS</span><span class="chip">MX / DKIM</span><span class="chip">SMTP</span>
+                  <span class="chip">Synology NAS</span><span class="chip">DNS</span><span class="chip">MX /
+                    DKIM</span><span class="chip">SMTP</span>
                 </div>
-                <button type="button" class="card-more stretched-link mt-3" data-bs-toggle="modal" data-bs-target="#work-nas">查看細節 →</button>
+                <button type="button" class="card-more stretched-link mt-3" data-bs-toggle="modal"
+                  data-bs-target="#work-nas">查看細節 →</button>
               </div>
             </article>
           </div>
@@ -511,7 +568,8 @@
         <div class="row justify-content-md-center mb-5 mb-md-6 mb-xl-8">
           <div class="col-12 col-md-10 col-lg-9 col-xl-8 text-center">
             <p class="section-eyebrow">EXPERIENCE</p>
-            <h2 class="display-3 fw-bolder mb-3">我的<mark class="bsb-tpl-highlight bsb-tpl-highlight-blue"><span class="bsb-tpl-font-hw text-accent">經歷</span></mark></h2>
+            <h2 class="display-3 fw-bolder mb-3">我的<mark class="bsb-tpl-highlight bsb-tpl-highlight-blue"><span
+                  class="bsb-tpl-font-hw text-accent">經歷</span></mark></h2>
           </div>
         </div>
 
@@ -585,14 +643,18 @@
             <h3 class="h4 mb-4">證照</h3>
             <ul class="list-group list-group-flush">
               <li class="list-group-item px-0 d-flex align-items-start gap-3">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="text-primary flex-shrink-0 mt-1" viewBox="0 0 16 16" aria-hidden="true">
-                  <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                  class="text-primary flex-shrink-0 mt-1" viewBox="0 0 16 16" aria-hidden="true">
+                  <path
+                    d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
                 </svg>
                 <span>日本語能力試驗 JLPT N3<span class="text-secondary">・國際交流基金會</span></span>
               </li>
               <li class="list-group-item px-0 d-flex align-items-start gap-3">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="text-primary flex-shrink-0 mt-1" viewBox="0 0 16 16" aria-hidden="true">
-                  <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                  class="text-primary flex-shrink-0 mt-1" viewBox="0 0 16 16" aria-hidden="true">
+                  <path
+                    d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
                 </svg>
                 <span>救生員</span>
               </li>
@@ -612,7 +674,8 @@
         <div class="row gy-4 gy-lg-0 align-items-lg-center">
 
           <div class="col-12 col-lg-6">
-            <img class="img-fluid rounded-4" loading="lazy" src="./assets/img/contact/contact-img-1.jpg" alt="" width="800" height="900">
+            <img class="img-fluid rounded-4" loading="lazy" src="./assets/img/contact/contact-img-1.jpg" alt=""
+              width="800" height="900">
           </div>
 
           <div class="col-12 col-lg-6">
@@ -626,8 +689,10 @@
 
                 <div class="d-flex mb-4">
                   <div class="me-4 text-primary flex-shrink-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
-                      <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z" />
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                      viewBox="0 0 16 16" aria-hidden="true">
+                      <path
+                        d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z" />
                     </svg>
                   </div>
                   <div>
@@ -638,13 +703,16 @@
 
                 <div class="d-flex">
                   <div class="me-4 text-primary flex-shrink-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
-                      <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                      viewBox="0 0 16 16" aria-hidden="true">
+                      <path
+                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
                     </svg>
                   </div>
                   <div>
                     <h3 class="h5 mb-2">GitHub</h3>
-                    <a class="link-secondary text-decoration-none" href="https://github.com/Guan24071" target="_blank" rel="noopener">github.com/Guan24071</a>
+                    <a class="link-secondary text-decoration-none" href="https://github.com/Guan24071" target="_blank"
+                      rel="noopener">github.com/Guan24071</a>
                   </div>
                 </div>
 
@@ -669,23 +737,29 @@
         <div class="col-12 col-md-7 order-1 order-md-0 text-center text-md-start">
           <div class="copyright">&copy; 2026 黃冠皓. All Rights Reserved.</div>
           <div class="credits text-secondary mt-2 fs-7">
-            Template by <a href="https://bootstrapbrain.com/" class="link-secondary text-decoration-none" target="_blank" rel="noopener">BootstrapBrain</a>（MIT）
+            Template by <a href="https://bootstrapbrain.com/" class="link-secondary text-decoration-none"
+              target="_blank" rel="noopener">BootstrapBrain</a>（MIT）
           </div>
         </div>
 
         <div class="col-12 col-md-5 order-0 order-md-1">
           <ul class="nav justify-content-center justify-content-md-end">
             <li class="nav-item">
-              <a class="nav-link link-dark" href="https://github.com/Guan24071" target="_blank" rel="noopener" aria-label="GitHub">
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
-                  <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+              <a class="nav-link link-dark" href="https://github.com/Guan24071" target="_blank" rel="noopener"
+                aria-label="GitHub">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16"
+                  aria-hidden="true">
+                  <path
+                    d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
                 </svg>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link link-dark" href="mailto:guan@guanbox.com" aria-label="Email">
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
-                  <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z" />
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16"
+                  aria-hidden="true">
+                  <path
+                    d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z" />
                 </svg>
               </a>
             </li>
@@ -711,7 +785,8 @@
        ============================================================ -->
 
   <!-- 本地大型語言模型部署 -->
-  <div class="modal fade work-modal" id="work-llama" tabindex="-1" aria-labelledby="work-llama-title" aria-hidden="true">
+  <div class="modal fade work-modal" id="work-llama" tabindex="-1" aria-labelledby="work-llama-title"
+    aria-hidden="true">
     <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
       <div class="modal-content">
         <div class="modal-header">
@@ -722,16 +797,21 @@
 
           <div class="work-gallery">
             <figure>
-              <img loading="lazy" src="./assets/img/works/llamacpp-local-chat.gif" alt="SillyTavern 本地模型對話、終端輸出與 GPU 資源圖表">
+              <img loading="lazy" src="./assets/img/works/llamacpp-local-chat.gif"
+                alt="SillyTavern 本地模型對話、終端輸出與 GPU 資源圖表">
               <figcaption>在 SillyTavern 中與本機大型語言模型實際對話，回覆以串流方式逐步顯示；右側同步呈現推論終端與 Windows GPU 資源圖表。</figcaption>
             </figure>
             <figure>
-              <img loading="lazy" src="./assets/img/works/llamacpp-openai-compatible.jpg" alt="SillyTavern 連接本機 KoboldCpp 模型的 API 設定">
-              <figcaption>SillyTavern 透過 <code>127.0.0.1</code> 的本機 API 連接 KoboldCpp，並確認 Gemma 模型已上線；對話介面與推論後端各自獨立。</figcaption>
+              <img loading="lazy" src="./assets/img/works/llamacpp-openai-compatible.jpg"
+                alt="SillyTavern 連接本機 KoboldCpp 模型的 API 設定">
+              <figcaption>SillyTavern 透過 <code>127.0.0.1</code> 的本機 API 連接 KoboldCpp，並確認 Gemma 模型已上線；對話介面與推論後端各自獨立。
+              </figcaption>
             </figure>
             <figure>
-              <img loading="lazy" src="./assets/img/works/llamacpp-resource-control.gif" alt="llama.cpp 串流輸出與 NVIDIA GPU 即時資源用量">
-              <figcaption>實際呼叫 llama.cpp 的 OpenAI 相容 API：左側呈現繁體中文逐字串流輸出，右側同步採集 RTX 5090 的 GPU 使用率、顯存與功耗；本次推論峰值達 97%。</figcaption>
+              <img loading="lazy" src="./assets/img/works/llamacpp-resource-control.gif"
+                alt="llama.cpp 串流輸出與 NVIDIA GPU 即時資源用量">
+              <figcaption>實際呼叫 llama.cpp 的 OpenAI 相容 API：左側呈現繁體中文逐字串流輸出，右側同步採集 RTX 5090 的 GPU 使用率、顯存與功耗；本次推論峰值達 97%。
+              </figcaption>
             </figure>
           </div>
 
@@ -754,7 +834,8 @@
   </div>
 
   <!-- ComfyUI 影像生成管線 -->
-  <div class="modal fade work-modal" id="work-comfy" tabindex="-1" aria-labelledby="work-comfy-title" aria-hidden="true">
+  <div class="modal fade work-modal" id="work-comfy" tabindex="-1" aria-labelledby="work-comfy-title"
+    aria-hidden="true">
     <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
       <div class="modal-content">
         <div class="modal-header">
@@ -811,7 +892,8 @@
               <figcaption>近 30 天的阻擋統計將垃圾郵件、病毒、DNSBL、惡意內容與附件過濾等項目分類呈現，方便掌握郵件威脅及過濾狀況。</figcaption>
             </figure>
             <figure>
-              <img loading="lazy" src="./assets/img/works/cloudflare-dns-analytics.jpg" alt="Cloudflare 上 guanbox.com 的 DNS 查詢分析介面">
+              <img loading="lazy" src="./assets/img/works/cloudflare-dns-analytics.jpg"
+                alt="Cloudflare 上 guanbox.com 的 DNS 查詢分析介面">
               <figcaption>透過 Cloudflare 維護 <code>guanbox.com</code>，並由 DNS 分析介面查看查詢趨勢、回應狀態及全球來源，持續掌握網域解析狀況。</figcaption>
             </figure>
           </div>
@@ -841,7 +923,7 @@
       btn.addEventListener('click', function () {
         var next = document.documentElement.getAttribute('data-bs-theme') === 'dark' ? 'light' : 'dark';
         document.documentElement.setAttribute('data-bs-theme', next);
-        try { localStorage.setItem('theme', next); } catch (e) { /* 無痕模式，不記憶偏好 */ }
+        try {localStorage.setItem('theme', next);} catch (e) { /* 無痕模式，不記憶偏好 */}
       });
     })();
 
@@ -865,11 +947,11 @@
       // 兩個都拿不到通常代表影片權限是「私人」，這時才退回本地備用圖。
       var posters = id
         ? ['https://i.ytimg.com/vi/' + id + '/maxresdefault.jpg',
-           'https://i.ytimg.com/vi/' + id + '/hqdefault.jpg',
-           FALLBACK_POSTER]
+        'https://i.ytimg.com/vi/' + id + '/hqdefault.jpg',
+          FALLBACK_POSTER]
         : [FALLBACK_POSTER];
       var pi = 0;
-      function nextPoster() { if (++pi < posters.length) img.src = posters[pi]; }
+      function nextPoster() {if (++pi < posters.length) img.src = posters[pi];}
       // 注意：拿不到縮圖時 i.ytimg.com 不是回 404，而是回「200 + 一張 120×90 的灰圖」，
       // 所以 error 事件根本不會觸發。要靠 load 之後量尺寸才判斷得出來。
       img.addEventListener('error', nextPoster);
@@ -955,7 +1037,7 @@
             img: fig.querySelector('img'),
             cap: fig.querySelector('figcaption')
           };
-        }).filter(function (s) { return s.img; });
+        }).filter(function (s) {return s.img;});
         if (slides.length === 0) return;
 
         // 只有一張就不必是輪播
@@ -1004,7 +1086,7 @@
           btn.setAttribute('data-bs-target', '#' + id);
           btn.setAttribute('data-bs-slide', dir);
           btn.innerHTML = '<span class="carousel-control-' + dir + '-icon" aria-hidden="true"></span>' +
-                          '<span class="visually-hidden">' + (dir === 'prev' ? '上一張' : '下一張') + '</span>';
+            '<span class="visually-hidden">' + (dir === 'prev' ? '上一張' : '下一張') + '</span>';
           carousel.appendChild(btn);
         });
 
@@ -1033,7 +1115,7 @@
         // 用箭頭或鍵盤換頁時，縮圖列的高亮要跟著走
         carousel.addEventListener('slid.bs.carousel', function (e) {
           var items = strip.querySelectorAll('button');
-          items.forEach(function (b, i) { b.classList.toggle('active', i === e.to); });
+          items.forEach(function (b, i) {b.classList.toggle('active', i === e.to);});
         });
       });
     })();
